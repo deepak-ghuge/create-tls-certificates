@@ -8,12 +8,11 @@ Prerequiste - Docker
 
 
 Steps : 
+1. clone the git repo (https://github.com/deepak-ghuge/create-tls-certificates.git)
 
-clone the git repo 
+2. docker build -t createtlscert
 
-docker build -t createtlscert .
-
-docker run -it --rm -v /tmp/crt:/crt createtlscert 10.11.12.13
+3. docker run -it --rm -v /tmp/crt:/crt createtlscert 10.11.12.13
 
 TLS certificates will be created and copied in the /tmp/crt directory. 
 
