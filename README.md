@@ -12,10 +12,12 @@ Steps :
 
 2. docker build -t createtlscert
 
-3. docker run -it --rm -v `pwd`:/crt createtlscert <ip> <hostname>
-eg docker run -it --rm -v `pwd`:/crt createtlscert 192.168.122.1 ubiquity
+3. docker run -it --rm -v <full directory path on host>:/crt createtlscert <ip> <hostname>
 
-TLS certificates will be created and copied in the current working directory. 
-Certificates with same name will be overwritten. 
+eg docker run -it --rm -v /tmp/crt:/crt createtlscert 192.168.122.1 ubiquity
+
+TLS certificates will be created and copied in the specified directory i.e. in <full directory path on host>.
+Directory spefied in <full directory path on host> must exist on host. 
+Certificates with same name will be overwritten if present in the specified directory. 
 
 Note - Generating TLS certificate using this method is only meant for Test purpose.  
